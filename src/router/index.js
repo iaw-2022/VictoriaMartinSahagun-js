@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ActividadesView from '../views/ActividadesView.vue'
-import ReservarActividadView from '../views/ReservarActividadView.vue'
+import ReservarView from '../views/ReservarView.vue'
+import ComidasView from '../views/ComidasView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,9 +18,14 @@ const router = createRouter({
       component: ActividadesView
     },
     {
-      path: '/reservar/actividad',
-      name: 'reservarActividad',
-      component: ReservarActividadView
+      path: '/reservar',
+      name: 'reservar',
+      component: ReservarView
+    },
+    {
+      path: '/comidas',
+      name: 'comidas',
+      component: ComidasView
     }
   ]
 })

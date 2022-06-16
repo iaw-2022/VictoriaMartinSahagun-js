@@ -10,7 +10,9 @@
     "pinia": "^2.0.14",
     "tw-elements": "^1.0.0-alpha12",
     "vue": "^3.2.36",
-    "vue-router": "^4.0.15"
+    "vue-carousel": "^0.18.0",
+    "vue-router": "^4.0.15",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",

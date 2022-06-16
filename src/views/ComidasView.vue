@@ -1,0 +1,3 @@
+<template>
+    <CarouselComidas />
+</template>

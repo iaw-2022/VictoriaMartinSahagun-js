@@ -1,7 +1,9 @@
 <template>
-  <div class="flex flex-col"> 
+  <div class="flex flex-col h-screen">
     <NavBar />
-    <RouterView />
+    <background>
+      <RouterView />
+    </background>
     <Footer />
   </div>
 </template>
@@ -17,3 +19,13 @@
     }
   }
 </script>
+
+<style>
+background{
+    background-image: url(sierra3.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>

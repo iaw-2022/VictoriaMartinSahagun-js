@@ -1,15 +1,17 @@
 <template>
-<div class="flex bg-gray-100">
-    <form class="bg-white rounded-lg ">
-            <div class="flex">
-               <div class="flex-1 py-5 pl-5 overflow-hidden">
+<div class="flex">
+    <form class="bg-white rounded-lg w-auto h-auto">
+            <div class="flex flex-col">
+               <div class="flex py-5 pl-5 overflow-hidden">
                  <h1 class="inline text-2xl font-semibold leading-none">Reserva</h1>
+               </div>
+               <div class="flex py-5 pl-5 overflow-hidden">
+                 <p class="inline leading-none">{{elemento.nombre}} a las {{elemento.horario}} el día {{elemento.dia}}</p>
                </div>
             </div>
             <div class="px-5 pb-5">
                <input  placeholder="Cantidad personas" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
-               <input  placeholder="Nota opcional" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
-            </div>
+               <textarea id="aclaracion" rows="4" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400" placeholder="Deja tu aclaracion..."></textarea></div>
             <div class="flex flex-row-reverse p-3">
                <div class="flex-initial pl-3">
                   <button type="button" class="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize   bg-black rounded-md hover:bg-gray-800  focus:outline-none focus:bg-gray-900  transition duration-300 transform active:scale-95 ease-in-out">
@@ -46,3 +48,9 @@ form {
     height: 100%;
 }
 </style>
+
+<script>
+export default {
+    props: ['elemento'],
+}
+</script>
