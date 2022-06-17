@@ -20,7 +20,7 @@ const router = createRouter({
       component: ActividadesView
     },
     {
-      path: '/reservar',
+      path: '/reservar/:id',
       name: 'reservar',
       component: ReservarView
     },

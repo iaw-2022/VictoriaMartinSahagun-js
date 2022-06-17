@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center w-full">
+  <div class="flex align-middle justify-center w-full">
     <FormReserva :elemento="elemento"/>
   </div>
 </template>

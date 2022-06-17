@@ -1,14 +1,14 @@
 <template>
     <li>
-        <a class="flex flex-row justify-evenly p-4 border bg-white rounded-lg items-center ">
+        <a class="flex flex-row p-4 border bg-white rounded-lg items-center justify-between">
             <img :src="reserva.img" alt="reserva" class="w-20 h-20 rounded-lg"/>
-            <div class="justify-evenly">
+            <div class="flex flex-col">
                 <h3 class="font-bold text-gray-900">{{reserva.nombre}}</h3>
-                <div class="flex flex-row mt-1">
+                <div class="flex flex-row mt-1 space-x-6">
                     <div class="text-s font-medium text-gray-900">Dia: {{reserva.dia}}</div>
                     <div class="text-s font-medium text-gray-900">Horario: {{reserva.horario}}</div>
                 </div>
-                <div class="flex flex-row mt-1 ">
+                <div class="flex flex-row mt-1 space-x-6">
                     <div class="text-s font-medium text-gray-900">Personas: {{reserva.cantidad_personas}}</div>
                     <div class="text-s font-medium text-gray-900">Localizacion: {{reserva.localizacion}}</div>
                 </div>

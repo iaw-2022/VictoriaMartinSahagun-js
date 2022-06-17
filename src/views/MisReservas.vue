@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center w-full">
-        <ul class="space-y-4">
+        <ul class="space-y-4 mt-10 w-1/2 justify-center">
             <div v-for="reserva in reservas" :key="reserva.id">
                 <LiMisReservas :reserva="reserva"/>
             </div>
