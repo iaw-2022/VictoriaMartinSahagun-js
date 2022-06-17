@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center mt-10">
+  <div class="flex justify-center w-full">
     <FormReserva :elemento="elemento"/>
   </div>
 </template>
@@ -8,7 +8,7 @@
  export default {
     data() {
       return {
-        elemento:[{
+        elemento:{
         "id": "1",
         "nombre": "Yoga",
         "dia": "Viernes",
@@ -19,7 +19,7 @@
         "img_id": "img/aqua_gym_zyvz6s",
         "created_at": null,
         "updated_at": "2022-06-14T17:35:48.000Z"
-      }]
+      }
       }
     }
  }

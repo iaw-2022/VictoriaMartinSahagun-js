@@ -58,7 +58,7 @@
           <a class=" dropdown-item text-sm py-2  px-4  font-normal  block  w-full  whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/cuenta">Mi cuenta</a>
         </li>
         <li>
-          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/reservas">Mis reservas</a>
+          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas">Mis reservas</a>
         </li>
       </ul>
     </div>

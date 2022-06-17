@@ -24,13 +24,12 @@
   </div>
   <div class="carousel-inner relative w-auto h-auto overflow-hidden">
     <div v-for="cardComida in cardsComidas" :key="cardComida.id">
-      <CardComida :cardComida="cardComida"/>
-      <!--<div v-if="cardComida.id == 1" class="carousel-item active float-left w-auto">
+      <div v-if="cardComida.id == 1" class="carousel-item active float-left w-auto">
         <CardComida :cardComida="cardComida"/>
       </div>
       <div v-else class="carousel-item float-left w-auto">
         <CardComida :cardComida="cardComida"/>
-      </div>-->
+      </div>
     </div>
   </div>
   <button

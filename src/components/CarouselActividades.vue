@@ -25,11 +25,11 @@
   <div class="carousel-inner relative w-auto h-auto overflow-hidden">
     <div v-for="cardActividad in cardsActividades" :key="cardActividad.id">
       <div v-if="cardActividad.id == 1" class="carousel-item active float-left w-auto">
-          <CardActividad :cardActividad="cardActividad"/>
-        </div>
-        <div v-else class="carousel-item float-left w-auto">
-          <CardActividad :cardActividad="cardActividad"/>
-        </div>
+        <CardActividad :cardActividad="cardActividad"/>
+      </div>
+      <div v-else class="carousel-item float-left w-auto">
+        <CardActividad :cardActividad="cardActividad"/>
+      </div>
     </div>
   </div>
   <button

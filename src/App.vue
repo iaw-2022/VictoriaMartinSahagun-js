@@ -2,7 +2,9 @@
   <div class="flex flex-col h-screen">
     <NavBar />
     <background>
-      <RouterView />
+      <div class=" bg-gray-900 bg-opacity-20 h-full">
+        <RouterView />
+      </div>
     </background>
     <Footer />
   </div>

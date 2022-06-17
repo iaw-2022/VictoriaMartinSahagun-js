@@ -6,12 +6,11 @@
                  <h1 class="inline text-2xl font-semibold leading-none">Reserva</h1>
                </div>
                <div class="flex py-5 pl-5 overflow-hidden">
-                 <p class="inline leading-none">{{elemento.nombre}} a las {{elemento.horario}} el día {{elemento.dia}}</p>
+                 <p class="inline leading-none">{{reserva.nombre}} a las {{reserva.horario}} el día {{reserva.dia}}</p>
                </div>
             </div>
             <div class="px-5 pb-5">
                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                  <option selected>Cantidad de personas</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -60,6 +59,6 @@ form {
 
 <script>
 export default {
-    props: ['elemento'],
+    props: ['reserva'],
 }
 </script>
