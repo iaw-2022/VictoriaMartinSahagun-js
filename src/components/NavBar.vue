@@ -53,9 +53,9 @@
           style="height: 25px; width: 25px" alt="" loading="lazy" />
       </a>
       <ul class="dropdown-menu    min-w-max    absolute    hidden    bg-gray-900    text-base    z-50    float-left    py-2    list-none    text-left    rounded-lg
-      shadow-lg    mt-1    m-0    bg-clip-padding    border-none    left-0   right-auto" aria-labelledby="dropdownMenuButton2">
+      shadow-lg    mt-1    m-0    bg-clip-padding    border-none    left-auto   right-0" aria-labelledby="dropdownMenuButton2">
         <li>
-          <a class=" dropdown-item text-sm py-2  px-4  font-normal  block  w-full  whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/cuenta">Mi cuenta</a>
+          <a class=" dropdown-item text-sm py-2  px-4  font-normal  block  w-full  whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" >Mi cuenta</a>
         </li>
         <li>
           <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas">Mis reservas</a>

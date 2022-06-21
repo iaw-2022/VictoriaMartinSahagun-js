@@ -1,9 +1,9 @@
 <template>
     <div class="flex justify-center w-full">
-        <ul class="space-y-4 mt-10 w-1/2 justify-center">
-            <div v-for="reserva in reservas" :key="reserva.id">
+        <ul class="space-y-4 mt-5 w-1/2 justify-center mb-5">
+            <li v-for="reserva in reservas" :key="reserva.id">
                 <LiMisReservas :reserva="reserva"/>
-            </div>
+            </li>
         </ul>
     </div>
 </template>
@@ -29,6 +29,15 @@
         "horario": "Cena",
         "localizacion": "Restaurant",
         "img": "https://res.cloudinary.com/proyectobalcon/image/upload/v1652636836/img/sorrentinos_kdnwdy.jpg"
+        },
+        {
+        "id": "3",
+        "cantidad_personas": "3",
+        "nombre": "Cata de vinos",
+        "dia": "Sabado",
+        "horario": "19:30",
+        "localizacion": "Restaurant",
+        "img": "https://res.cloudinary.com/proyectobalcon/image/upload/v1655228172/img/zmhskl1k11paadbg8wl2.jpg",
         }]
       }
     }
