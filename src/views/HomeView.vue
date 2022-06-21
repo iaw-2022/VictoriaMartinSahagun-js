@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-900 bg-opacity-50 h-full pt-10">
+    <div class="bg-gray-900 bg-opacity-50 h-screen pt-10">
         <h2 class="flex justify-center text-4xl font-bold leading-tight text-white">Llego la hora de vivir las sierras</h2>
         <div class="flex flex-row justify-between m-20 items-center">
             <div class="w-1/2 h-1/2">
