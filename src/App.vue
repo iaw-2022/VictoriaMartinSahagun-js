@@ -24,7 +24,7 @@
 
 <style>
 background{
-    background-image: url(sierra3.jpg);
+    background-image: url(https://res.cloudinary.com/proyectobalcon/image/upload/v1655838295/img/sierra3_hxco7e.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
