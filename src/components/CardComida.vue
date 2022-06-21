@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-screen sm:flex-row">
+  <div class="flex flex-col items-center justify-center h-full sm:flex-row">
     <div class="p-4 sm:w-1/2 lg:w-1/3">
       <RouterLink :to="`/reservar/${cardComida.id}`">
           <div class="flex flex-col overflow-hidden transition duration-500 ease-in-out transform bg-white rounded-lg shadow-2xl hover:scale-105">
