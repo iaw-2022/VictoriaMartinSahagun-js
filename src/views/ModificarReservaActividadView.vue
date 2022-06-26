@@ -1,19 +1,20 @@
 <template>
     <div class="flex align-middle justify-center w-full">
-        <FormModificacionReservaActividad :elemento="elemento" :cabana="cabana"/>
+        <FormModificacionReservaActividad :actividad="actividad" :cabana="cabana"/>
     </div>
 </template>
 
 <script>
 const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
 let cabana;
-let elemento;
+let reserva;
+let actividad;
  export default {
     data() {
-      this.getActividad(this.$route.params.id);
-      this.getCabana();
+      reserva=this.getReserva(this.$route.params.id).then(() => this.getActividad(this.reserva.actividad_id));
+      cabana=this.getCabana();
       return {
-        elemento,
+        actividad,
         cabana
       }
     },
@@ -22,9 +23,13 @@ let elemento;
         const response = await fetch(`${balconAPI}hospedados/1`);
         this.cabana = await response.json();
       },
+      async getReserva(id){
+        const response = await fetch(`${balconAPI}reservas_actividades/${id}`);
+        this.reserva = await response.json();
+      },
       async getActividad(id){
         const response = await fetch(`${balconAPI}actividades/${id}`);
-        this.elemento = await response.json();
+        this.actividad = await response.json();
       }
     }
   }
