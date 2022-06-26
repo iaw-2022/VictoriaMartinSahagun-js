@@ -11,10 +11,7 @@
             </div>
             <div class="px-5 pb-5">
                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-600 placeholder-gray-600 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                  <option selected>Cantidad de personas</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
+                  <option v-for="index in cabana.capacidad" :key="index" value="index">{{index}}</option>
                </select>
                <textarea id="aclaracion" rows="4" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400" placeholder="Deja tu aclaracion..."></textarea>
             </div>
@@ -56,7 +53,7 @@ form {
 </style>
 
 <script>
-export default {
-    props: ['elemento'],
-}
+  export default {
+    props: ['cabana','elemento']
+  }
 </script>

@@ -43,23 +43,29 @@
         </li>
         -->
         <li>
-          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/reservas">Mis reservas</a>
+          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="misreservas/actividades">Mis reservas</a>
         </li>
       </ul>
     </div>
-    <div class="dropdown relative">
-      <a class="dropdown-toggle flex items-center hidden-arrow"  id="dropdownMenuButton2" role="button"
+    <div class="dropdown relative flex flex-row ">
+      <a v-if="isAuthenticated" class="nav-item p-2 mr-6">
+        <ButtonLogout />
+      </a>
+      <a v-else class="nav-item p-2">
+        <ButtonLogin />
+      </a>
+      <a v-if="isAuthenticated" class="dropdown-toggle flex items-center hidden-arrow"  id="dropdownMenuButton2" role="button"
         data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-full"
-          style="height: 25px; width: 25px" alt="" loading="lazy" />
+        Usuario
       </a>
       <ul class="dropdown-menu    min-w-max    absolute    hidden    bg-gray-900    text-base    z-50    float-left    py-2    list-none    text-left    rounded-lg
       shadow-lg    mt-1    m-0    bg-clip-padding    border-none    left-auto   right-0" aria-labelledby="dropdownMenuButton2">
-        <!--<li>
-          <a class=" dropdown-item text-sm py-2  px-4  font-normal  block  w-full  whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" >Mi cuenta</a>
-        </li>-->
         <li>
-          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas">Mis reservas</a>
+          <a class=" dropdown-item text-sm py-2  px-4  font-normal  block  w-full  whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" >Mi cuenta</a>
+        </li>
+        <li>
+          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas/actividades">Reservas actividades</a>
+          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas/comidas">Reservas comidas</a>
         </li>
       </ul>
     </div>
@@ -68,3 +74,18 @@
   </div>
 </nav>
 </template>
+
+<script>
+import { useAuth0 } from '@auth0/auth0-vue';
+
+  export default {
+    setup() {
+      const { isAuthenticated } = useAuth0();
+
+      return {
+        isAuthenticated
+      };
+    }
+  };
+</script>
+

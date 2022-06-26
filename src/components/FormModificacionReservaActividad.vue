@@ -3,17 +3,15 @@
     <form class="bg-white rounded-lg w-auto h-auto">
             <div class="flex flex-col">
                <div class="flex py-5 pl-5 overflow-hidden">
-                 <h1 class="inline text-2xl font-semibold leading-none">Reserva</h1>
+                 <h1 class="inline text-2xl font-semibold leading-none">Modificar reserva</h1>
                </div>
                <div class="flex py-5 pl-5 overflow-hidden">
-                 <p class="inline leading-none">{{reserva.nombre}} a las {{reserva.horario}} el día {{reserva.dia}}</p>
+                 <p class="inline leading-none">{{elemento.nombre}} a las {{elemento.horario}} el día {{elemento.dia}}</p>
                </div>
             </div>
             <div class="px-5 pb-5">
                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
+                  <option v-for="index in cabana.capacidad" :key="index" value="index">{{index}}</option>
                </select>
                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -38,7 +36,7 @@
                         <path d="M8 9h8v10H8z" opacity=".3"></path>
                         <path d="M15.5 4l-1-1h-5l-1 1H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9z"></path>
                      </svg>
-                     <span class="pl-2 mx-1">Cancelar</span>
+                     <span class="pl-2 mx-1" >Cancelar</span>
                   </button>
                </div>
             </div>
@@ -59,6 +57,6 @@ form {
 
 <script>
 export default {
-    props: ['reserva'],
+    props: ['elemento','cabana'],
 }
 </script>
