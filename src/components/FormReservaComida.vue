@@ -1,13 +1,12 @@
 <template>
-<div class="flex mt-10 w-screen justify-center">
-    <form class="bg-white rounded-lg w-auto h-auto">
+<div class="bg-white rounded-lg mx-auto my-auto">
             <div class="flex flex-col">
-               <div class="flex py-5 pl-5 overflow-hidden">
+               <div class="py-5 pl-5 overflow-hidden">
                  <h1 class="inline text-2xl font-semibold leading-none">Reserva</h1>
                </div>
-               <div class="flex py-5 pl-5 overflow-hidden">
-                 <p v-if="elemento.tipo == 'cena'" class="inline leading-none">{{elemento.nombre}} a las 20:30 el día {{elemento.dia}}</p>
-                 <p v-else class="inline leading-none">{{elemento.nombre}} a las 13:30 el día {{elemento.dia}}</p>
+               <div class="py-5 px-5">
+                 <p v-if="elemento.tipo == 'cena'" class="text-center">{{elemento.nombre}} a las 20:30 el día {{elemento.dia}}</p>
+                 <p v-else class="text-center">{{elemento.nombre}} a las 13:30 el día {{elemento.dia}}</p>
                </div>
             </div>
             <div class="px-5 pb-5">
@@ -42,7 +41,6 @@
                   </RouterLink>
                </div>
             </div>
-      </form>
 </div>
 </template>
 

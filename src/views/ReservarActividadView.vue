@@ -1,5 +1,5 @@
 <template>
-  <div class="flex align-middle justify-center w-full">
+  <div class="grid grid-cols-1 h-screen">
     <FormReservaActividad :elemento="elemento" :cabana="cabana"/>
   </div>
 </template>

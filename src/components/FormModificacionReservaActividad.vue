@@ -1,12 +1,11 @@
 <template>
-<div class="flex mt-10">
-    <form class="bg-white rounded-lg w-auto h-auto">
+<div class="bg-white rounded-lg mx-auto my-10">
             <div class="flex flex-col">
-               <div class="flex py-5 pl-5 overflow-hidden">
+               <div class="py-5 pl-5 overflow-hidden">
                  <h1 class="inline text-2xl font-semibold leading-none">Modificar reserva</h1>
                </div>
-               <div class="flex py-5 pl-5 overflow-hidden">
-                 <p class="inline leading-none">{{actividad.nombre}} a las {{actividad.horario}} el día {{actividad.dia}}</p>
+               <div class="py-5 px-5">
+                 <p class="text-center">{{actividad.nombre}} a las {{actividad.horario}} el día {{actividad.dia}}</p>
                </div>
             </div>
             <div class="px-5 pb-5">
@@ -43,20 +42,8 @@
                   </RouterLink>
                </div>
             </div>
-      </form>
 </div>
 </template>
-
-<style>
-form {
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-left: 20%;
-    margin-right: 5%;
-    width: 100%;
-    height: 100%;
-}
-</style>
 
 <script>
 const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";

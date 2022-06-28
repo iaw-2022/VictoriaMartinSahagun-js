@@ -1,6 +1,6 @@
 <template>
-    <div class="flex align-middle justify-center w-full">
-        <FormModificacionReservaComida :comida="comida" :cabana="cabana"/>
+    <div class="grid grid-cols-1 h-screen">
+        <FormModificacionReservaComida class="mx-auto my-auto" :comida="comida" :cabana="cabana"/>
     </div>
 </template>
 

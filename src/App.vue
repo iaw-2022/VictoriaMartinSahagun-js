@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col justify-between">
     <NavBar />
     <background>
-      <div class=" bg-gray-900 bg-opacity-20 h-full">
+      <div class=" bg-gray-900 bg-opacity-20 ">
         <RouterView />
       </div>
     </background>

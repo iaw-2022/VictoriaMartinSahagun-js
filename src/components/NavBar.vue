@@ -12,19 +12,25 @@
     </svg>
   </button>
   <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
-    <a class="flex items-center text-gray-100 hover:text-gray-200 focus:text-gray-200 mt-2 lg:mt-0 mr-1" href="/">
+    <div class="flex items-center text-gray-100 hover:text-gray-200 focus:text-gray-200 mt-2 lg:mt-0 mr-1">
       <img src="/logo-navegacion.png" style="height: 40px" alt="logo" loading="lazy" />
-    </a>
+    </div>
     <!-- Left links -->
     <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
       <li class="nav-item p-2">
-        <a class="nav-link text-gray-100 hover:text-gray-200 focus:text-gray-200 p-0" href="/">Inicio</a>
+        <RouterLink :to="`/`">
+          <div class="nav-link text-gray-100 hover:text-gray-200 focus:text-gray-200 p-0">Inicio</div>
+        </RouterLink>
       </li>
       <li class="nav-item p-2">
-        <a class="nav-link text-gray-100 hover:text-gray-200 focus:text-gray-200 p-0" href="/actividades">Actividades</a>
+        <RouterLink :to="`/actividades`">
+          <div class="nav-link text-gray-100 hover:text-gray-200 focus:text-gray-200 p-0">Actividades</div>
+        </RouterLink>
       </li>
       <li class="nav-item p-2">
-        <a class="nav-link text-gray-100 hover:text-gray-200 focus:text-gray-200 p-0" href="/comidas">Comidas</a>
+        <RouterLink :to="`/comidas`">
+          <div class="nav-link text-gray-100 hover:text-gray-200 focus:text-gray-200 p-0">Comidas</div>
+        </RouterLink>
       </li>
     </ul>
   <!-- Left links -->
@@ -43,7 +49,12 @@
         </li>
         -->
         <li>
-          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="misreservas/actividades">Mis reservas</a>
+          <RouterLink :to="`/misreservas/actividades`">
+            <div class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200">Reservas actividades</div>
+          </RouterLink>
+          <RouterLink :to="`/misreservas/comidas`">
+            <div class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200">Reservas comidas</div>
+          </RouterLink>
         </li>
       </ul>
     </div>
@@ -60,12 +71,16 @@
       </a>
       <ul class="dropdown-menu    min-w-max    absolute    hidden    bg-gray-900    text-base    z-50    float-left    py-2    list-none    text-left    rounded-lg
       shadow-lg    mt-1    m-0    bg-clip-padding    border-none    left-auto   right-0" aria-labelledby="dropdownMenuButton2">
-        <li>
+        <!-- <li>
           <a class=" dropdown-item text-sm py-2  px-4  font-normal  block  w-full  whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" >Mi cuenta</a>
-        </li>
+        </li> -->
         <li>
-          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas/actividades">Reservas actividades</a>
-          <a class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200" href="/misreservas/comidas">Reservas comidas</a>
+          <RouterLink :to="`/misreservas/actividades`">
+            <div class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200">Reservas actividades</div>
+          </RouterLink>
+          <RouterLink :to="`/misreservas/comidas`">
+            <div class="dropdown-item text-sm py-2 px-4 font-normal  block w-full whitespace-nowrap bg-transparent text-gray-100 hover:text-gray-200 focus:text-gray-200">Reservas comidas</div>
+          </RouterLink>
         </li>
       </ul>
     </div>

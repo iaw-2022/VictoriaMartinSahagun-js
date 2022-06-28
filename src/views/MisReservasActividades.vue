@@ -1,8 +1,8 @@
 <template>
-    <div class="flex justify-center w-full">
-        <ul class="space-y-4 mt-5 w-1/2 justify-center mb-5">
+    <div class="grid grid-cols-1 h-screen">
+        <ul class="mx-auto my-auto">
             <li v-for="reserva in reservas" :key="reserva.id">
-                <LiMisReservasActividades :reserva="reserva"/>
+                <LiMisReservasActividades class="my-4" :reserva="reserva"/>
             </li> 
         </ul>
     </div>

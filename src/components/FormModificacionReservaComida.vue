@@ -1,11 +1,10 @@
 <template>
-<div class="flex mt-10">
-    <form class="bg-white rounded-lg w-auto h-auto">
+<div class="bg-white rounded-lg mx-auto my-10">
             <div class="flex flex-col">
-               <div class="flex py-5 pl-5 overflow-hidden">
+               <div class="py-5 pl-5 overflow-hidden">
                  <h1 class="inline text-2xl font-semibold leading-none">Modificar reserva</h1>
                </div>
-               <div class="flex py-5 pl-5 overflow-hidden">
+               <div class="py-5 px-5">
                  <p v-if="comida.tipo == 'cena'" class="inline leading-none">{{comida.nombre}} a las 20:30 el día {{comida.dia}}</p>
                  <p v-else class="inline leading-none">{{comida.nombre}} a las 13:30 el día {{comida.dia}}</p>
                </div>
@@ -44,20 +43,8 @@
                   </RouterLink>
                </div>
             </div>
-      </form>
 </div> 
 </template>
-
-<style>
-form {
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-left: 20%;
-    margin-right: 5%;
-    width: 100%;
-    height: 100%;
-}
-</style>
 
 <script>
 const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
