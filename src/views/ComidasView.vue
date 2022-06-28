@@ -9,6 +9,7 @@
 <script>
   import { useAuth0 } from '@auth0/auth0-vue';
   const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
+  let token;
   export default {
     setup() {
         const { isAuthenticated } = useAuth0();
@@ -27,11 +28,18 @@
         async getComidas(){
           let response;
           if(this.isAuthenticated){
-            response = await fetch(`${balconAPI}comidas/huesped/1`);
+            this.token = await this.$auth0.getAccessTokenSilently();
+            response = await fetch(`${balconAPI}comidas/huesped/`, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${this.token}`
+              }
+            });
           }else{
             response = await fetch(`${balconAPI}comidas`);
-          }
-          this.actividades = await response.json();
+          };
+          this.comidas = await response.json();
         }
       }
   }

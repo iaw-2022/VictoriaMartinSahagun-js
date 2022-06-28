@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { authGuard } from '@auth0/auth0-vue'
 import HomeView from '../views/HomeView.vue'
 import ActividadesView from '../views/ActividadesView.vue'
 import ReservarActividadView from '../views/ReservarActividadView.vue'
@@ -25,12 +26,14 @@ const router = createRouter({
     {
       path: '/actividades/reservar/:id',
       name: 'reservarActividad',
-      component: ReservarActividadView
+      component: ReservarActividadView,
+      beforeEnter: authGuard
     },
     {
       path: '/comidas/reservar/:id',
       name: 'reservarComida',
-      component: ReservarComidaView
+      component: ReservarComidaView,
+      beforeEnter: authGuard
     },
     {
       path: '/comidas',
@@ -40,22 +43,26 @@ const router = createRouter({
     {
       path: '/misreservas/actividades',
       name: 'misReservasActividades',
-      component: MisReservasActividades
+      component: MisReservasActividades,
+      beforeEnter: authGuard
     },
     {
       path: '/misreservas/comidas',
       name: 'misReservasComidas',
-      component: MisReservasComidas
+      component: MisReservasComidas,
+      beforeEnter: authGuard
     },
     {
       path: '/misreservas/actividades/modificar/:id',
       name: 'modificarReservaActividad',
-      component: ModificarReservaActividadView
+      component: ModificarReservaActividadView,
+      beforeEnter: authGuard
     },
     {
       path: '/misreservas/comidas/modificar/:id',
       name: 'modificarReservaComida',
-      component: ModificarReservaComidaView
+      component: ModificarReservaComidaView,
+      beforeEnter: authGuard
     },
   ]
 })

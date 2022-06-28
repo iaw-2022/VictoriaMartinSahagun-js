@@ -44,30 +44,20 @@
 </div>
 </template>
 
-<style>
-form {
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-left: 20%;
-    margin-right: 5%;
-    width: 100%;
-    height: 100%;
-}
-</style>
-
 <script>
 const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
   export default {
     props: ['cabana','elemento'],
      methods: {
       async postReservaComida(){
+         this.token = await this.$auth0.getAccessTokenSilently();
          const index = document.getElementById("grid-state");
          const response = await fetch(`${balconAPI}reservas_comidas/`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
                'Access-Control-Allow-Origin': 'http://localhost:3000/',
-               'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJnZDB0VTEwNU9RNUpyMktiSDZjZyJ9.eyJpc3MiOiJodHRwczovL2Rldi1xbTh4ZjZtaS51cy5hdXRoMC5jb20vIiwic3ViIjoiOGdqTHUySVlENnk5b3ptYUtPYVMwQ1FxNk1GMTg1YzRAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjMwMDAiLCJpYXQiOjE2NTYyNTMxMjcsImV4cCI6MTY1ODg0NTEyNywiYXpwIjoiOGdqTHUySVlENnk5b3ptYUtPYVMwQ1FxNk1GMTg1YzQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.ioVYKyR9AFx6c3YSVP6Pk0pJtUYn2nuIyR0hRa5vgbdQpjGsP6WDb0dsCu6Z_WsHnPw8xcB4wBExog9xIoy_8TtwocdRIG8GvpYkNSX4YTNM-WLfn5CmYT5yK2wTYMct16T_YpTXiiDhqTmxYqrM96WULk_1qfwQrzdYWLT6yG-7ZlzcaXLaNC6MWNZAcsGNbO3eRHVtWmpdJ7d5b_kzl-6veVRok8N_G3_wyBnKg4cRtzWtLhV74_oZB_GIPwbQWKFoAU8CrHNpgGz0uizyvnjxPHIOzArEkF8J2Ox_PptporY0yTfZfrytwD9nchGJ61tgsnPjv47-nhBCER3PCg'
+               'Authorization': `Bearer ${this.token}`
             },
             body: JSON.stringify({cabana_id: this.cabana.id, comida_id: this.elemento.id,cantidad_personas: index.value})
          });

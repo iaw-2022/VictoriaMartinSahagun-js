@@ -9,6 +9,7 @@ const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
 let cabana;
 let reserva;
 let comida;
+let token;
  export default {
     data() {
       reserva=this.getReserva(this.$route.params.id).then(() => this.getComida(this.reserva.comida_id));
@@ -20,7 +21,14 @@ let comida;
     },
     methods:{
       async getCabana(){
-        const response = await fetch(`${balconAPI}hospedados/1`);
+        this.token = await this.$auth0.getAccessTokenSilently();
+        const response = await fetch(`${balconAPI}hospedados/`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.token}`
+          }
+        });
         this.cabana = await response.json();
       },
       async getReserva(id){

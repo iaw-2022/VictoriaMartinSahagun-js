@@ -8,6 +8,7 @@
 const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
 let cabana;
 let elemento;
+let token;
  export default {
     data() {
       elemento=this.getActividad(this.$route.params.id);
@@ -19,7 +20,14 @@ let elemento;
     },
     methods:{
       async getCabana(){
-        const response = await fetch(`${balconAPI}hospedados/1`);
+        this.token = await this.$auth0.getAccessTokenSilently();
+        const response = await fetch(`${balconAPI}hospedados/`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.token}`
+          }
+        });
         this.cabana = await response.json();
       },
       async getActividad(id){

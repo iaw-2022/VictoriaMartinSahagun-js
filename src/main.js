@@ -27,9 +27,10 @@ const app = createApp(App);
 
 app.use(
   createAuth0({
-    domain: "dev-qm8xf6mi.us.auth0.com",
-    client_id: "JncpiY8ZD3AD6FNTNIA3u77v98map6Lo",
-    redirect_uri: window.location.origin
+    domain: 'dev-qm8xf6mi.us.auth0.com',
+    client_id: 'JncpiY8ZD3AD6FNTNIA3u77v98map6Lo',
+    redirect_uri: window.location.origin,
+    audience: 'https://localhost:3000',
   })
 );
 
