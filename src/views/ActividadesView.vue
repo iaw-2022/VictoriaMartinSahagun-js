@@ -1,7 +1,7 @@
 <template>
 <div class="grid grid-cols-1">
     <div v-for="actividad in actividades" :key="actividad.id">
-        <CardActividad class="mx-auto" :actividad="actividad"/>
+        <CardActividad class="mx-auto" :actividad="actividad" :hospedado="hospedado"/>
     </div>
 </div>
 </template>
@@ -22,7 +22,8 @@
       data() {
         this.getActividades();
         return{
-          actividades:[]
+          actividades:[],
+        hospedado: Boolean
         }
       },
       methods:{
@@ -37,10 +38,16 @@
                 'Authorization': `Bearer ${this.token}`
               }
             });
+            this.hospedado=true;
+          if (response.status === 400){
+            response = await fetch(`${balconAPI}actividades`);
+            this.hospedado=false;
+          }
           }else{
             response = await fetch(`${balconAPI}actividades`);
           }
           this.actividades = await response.json();
+          this.hospedado=false;
         }
       }
     }

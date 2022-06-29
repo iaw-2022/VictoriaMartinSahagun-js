@@ -1,7 +1,7 @@
 <template>
 <div class="grid grid-cols-1">
     <div v-for="comida in comidas" :key="comida.id">
-            <CardComida class="mx-auto" :comida="comida"/>
+            <CardComida class="mx-auto" :comida="comida" :hospedad="hospedado"/>
     </div>
 </div>
 </template>
@@ -21,30 +21,33 @@
     data() {
       this.getComidas();
       return{
-        comidas:[]
+        comidas:[],
+        hospedado: Boolean
       }
     },
     methods:{
-        async getComidas(){
-          let response;
-          if(this.isAuthenticated){
-            this.token = await this.$auth0.getAccessTokenSilently();
-            try{
-                response = await fetch(`${balconAPI}comidas/huesped/`, {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${this.token}`
-                }
-              });
-            }catch(error){
-              response = await fetch(`${balconAPI}comidas`);
+      async getComidas(){
+        let response;
+        if(this.isAuthenticated){
+          this.token = await this.$auth0.getAccessTokenSilently();
+          response = await fetch(`${balconAPI}comidas/huesped/`, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
             }
-          }else{
+          });
+          this.hospedado=true;
+          if (response.status === 400){
             response = await fetch(`${balconAPI}comidas`);
-          };
-          this.comidas = await response.json();
-        }
+            this.hospedado=false;
+          }
+        }else{
+          response = await fetch(`${balconAPI}comidas`);
+        };
+        this.comidas = await response.json();
+        this.hospedado=false;
       }
+    }
   }
 </script>
