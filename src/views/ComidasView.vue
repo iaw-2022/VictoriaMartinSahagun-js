@@ -29,13 +29,17 @@
           let response;
           if(this.isAuthenticated){
             this.token = await this.$auth0.getAccessTokenSilently();
-            response = await fetch(`${balconAPI}comidas/huesped/`, {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${this.token}`
-              }
-            });
+            try{
+                response = await fetch(`${balconAPI}comidas/huesped/`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${this.token}`
+                }
+              });
+            }catch(error){
+              response = await fetch(`${balconAPI}comidas`);
+            }
           }else{
             response = await fetch(`${balconAPI}comidas`);
           };
