@@ -10,7 +10,7 @@
   import { useAuth0 } from '@auth0/auth0-vue';
   const balconAPI = "https://proyecto-balcon-api.herokuapp.com/";
   let token;
-
+  let hospedado;
     export default {
       setup() {
         const { isAuthenticated } = useAuth0();
@@ -22,13 +22,13 @@
       data() {
         this.getActividades();
         return{
-          actividades:[],
-        hospedado: Boolean
+          actividades:[]
         }
       },
       methods:{
         async getActividades(){
           let response;
+          this.hospedado='true';
           if(this.isAuthenticated){
             this.token = await this.$auth0.getAccessTokenSilently();
             response = await fetch(`${balconAPI}actividades/huesped/`, {
@@ -38,16 +38,15 @@
                 'Authorization': `Bearer ${this.token}`
               }
             });
-            this.hospedado=true;
           if (response.status === 400){
+            this.hospedado='false';
             response = await fetch(`${balconAPI}actividades`);
-            this.hospedado=false;
           }
           }else{
+            this.hospedado='false';
             response = await fetch(`${balconAPI}actividades`);
           }
           this.actividades = await response.json();
-          this.hospedado=false;
         }
       }
     }

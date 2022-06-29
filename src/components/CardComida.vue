@@ -22,7 +22,7 @@
                         <div v-if="comida.tipo == 'cena'" class="overflow-hidden h-auto ...">20:30</div>
                         <div v-else class="overflow-hidden h-auto ...">13:30</div>
                     </div>
-                    <div v-if="isAuthenticated && hospedado" class="pt-4 text-l">
+                    <div v-if="hospedado=='true'" class="pt-4 text-l">
                         <RouterLink :to="`/comidas/reservar/${comida.id}`" type="button" class="text-white font-bold bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-900 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                             Reservar
                         </RouterLink>
