@@ -31,6 +31,7 @@ app.use(
     client_id: 'JncpiY8ZD3AD6FNTNIA3u77v98map6Lo',
     redirect_uri: window.location.origin,
     audience: 'https://localhost:3000',
+    cacheLocation: "localstorage"
   })
 );
 
