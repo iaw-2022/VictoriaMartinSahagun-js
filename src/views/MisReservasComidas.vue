@@ -8,7 +8,7 @@
     </div>
     <div v-else class="grid grid-cols-1 h-screen">
       <div class="mx-auto my-auto p-10 rounded-lg bg-white text-xl font-medium">
-        <h4>No tiene reservas para ninguna actividad.</h4>        
+        <h4>No tiene reservas para ninguna comida.</h4>        
       </div>      
     </div>
 </template>
